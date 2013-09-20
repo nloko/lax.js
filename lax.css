@@ -1,0 +1,6 @@
+.lax-layer {
+  position: fixed;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}

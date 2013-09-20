@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>lax.js - a parallax library for jquery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='lax.css' rel='stylesheet' type='text/css'>
+    <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="lax.js"></script>
+    <style type="text/css">
+      html, body {
+        font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+        height: 2250px;
+        background: #eee;
+      }
+      .text {
+        text-align: center;
+        color: #525252;
+        width: 100%;
+        font-size: 24px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+      }
+      .one {
+        color: #222;
+        top: 50px;
+        font-size: 72px;
+      }
+      .two {
+        top: 350px;
+        left: 20%;
+        right: 20%;
+        width: auto;
+        font-size: 40px;
+      }
+      .three {
+        width: auto;
+        top: 200px;
+        left: 10px;
+        font-size: 32px;
+        opacity: 0;
+      }
+      .four {
+        width: auto;
+        top: 1500px;
+        right: 10px;
+      }
+      .five {
+        color: #222;
+        top: 1000px;
+        font-size: 72px;
+      }
+      .happy-face {
+        position: relative;
+        background: yellow;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        height: 200px;
+        width: 200px;
+        margin: 10px auto;
+        -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      }
+      .happy-face .eye {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        background: black;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        height: 20%;
+        width: 10%;
+      }
+      .happy-face .eye.left {
+        margin-left: -24%;
+      }
+      .happy-face .eye.right {
+        margin-left: 14%;
+      }
+      .happy-face .smile {
+        height: 30%;
+        border: solid #222;
+        border-top: 0;
+        -moz-border-radius: 0 0 120px 120px / 0 0 90px 90px;
+        -webkit-border-radius: 0 0 120px 120px 0 0 90px 90px;
+        border-radius: 0 0 120px 120px / 0 0 90px 90px;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        margin-left: -40%;
+        background: rgba(0,0,0,0);
+        width: 80%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lax-layer text one" 
+      data-lax-y-speed="0.1" 
+      data-lax-opacity="10"
+       >
+      Hello there!
+    </div>
+    <div class="lax-layer text two" 
+      data-lax-y-speed="1" 
+       >
+     Welcome to the demo of lax.js — the simplest parallax jquery library EVER! 
+    </div>
+    <div class="lax-layer text three" 
+      data-lax-y-speed="0.2"
+      data-lax-opacity-accel="-2"
+    >
+    ...things can move sloooooow...
+    </div> 
+    <div class="lax-layer text four" 
+      data-lax-y-speed="3" 
+    >
+    ...things can move fassssst...
+    </div>
+    <div class="lax-layer text five" 
+      data-lax-y-speed="0.5" 
+      data-lax-opacity-accel="-10"
+      data-lax-opacity-offset="1000" >
+      Have a nice day!
+      <div class="happy-face">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="smile"></div>
+      </div>
+    </div>
+  </body>
+</html>
