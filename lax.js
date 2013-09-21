@@ -1,14 +1,18 @@
 /**
  * Depends on lax.css
  *
+ * Assumes use with a document that scrolls ie. not with
+ * individual elements that scroll within a document.
+ *
  * MIT License
  * Copyright 2013 Neil Loknath <neil.loknath@gmail.com>
  */
 
 ;(function($) {
-  var docHeight;
 
   function render(scrollOffset) {
+    var wh = $(window).height();
+    var dh = $(document).height();    
     $(".lax-layer").each(function() {
       // layer scroll speed
       var speed = parseFloat($(this).data("lax-y-speed")) || 0;
@@ -18,12 +22,12 @@
         "0)";
 
       // fade speed
-      var opacityAccel = parseFloat($(this).data("lax-opacity-accel")) || 0;
+      var opacitySpeed = parseFloat($(this).data("lax-opacity-speed")) || 0;
       // when to start fading
       var opacityDelay = parseFloat($(this).data("lax-opacity-offset")) || 0;
 
       $(this).css({
-        opacity: (opacityAccel < 0 ? 0 : 1) - (scrollOffset - opacityDelay) / docHeight * opacityAccel,
+        opacity: (opacitySpeed < 0 ? 0 : 1) - (scrollOffset - opacityDelay) / Math.max(wh, (dh - wh)) * opacitySpeed,
         webkitTransform: transform,
         mozTransform: transform,
         msTransform: transform,
@@ -42,7 +46,6 @@
   }
 
   $(function() {
-    docHeight = $(document).height();
     var intervalId;
 
     // move the layers
